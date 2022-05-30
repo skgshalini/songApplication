@@ -1,0 +1,40 @@
+CREATE TABLE `artists` (
+  `artst_id` int NOT NULL AUTO_INCREMENT,
+  `artst_name` varchar(45) NOT NULL,
+  `artst_dob` varchar(45) NOT NULL,
+  `artst_bio` varchar(45) NOT NULL,
+  `usr_id` int NOT NULL,
+  PRIMARY KEY (`artst_id`)
+) 
+
+
+CREATE TABLE `artst_sng` (
+  `artst_id` int NOT NULL,
+  `sng_id` int NOT NULL
+) 
+
+CREATE TABLE `songs` (
+  `sng_id` int NOT NULL AUTO_INCREMENT,
+  `sng_name` varchar(45) NOT NULL,
+  `sng_dor` varchar(45) NOT NULL,
+  `sng_cover` blob NOT NULL,
+  `usr_id` int NOT NULL,
+  PRIMARY KEY (`sng_id`)
+) 
+
+CREATE TABLE `users` (
+  `usr_id` int NOT NULL AUTO_INCREMENT,
+  `usr_name` varchar(45) NOT NULL,
+  `usr_email` varchar(45) NOT NULL,
+  `usr_password` varchar(45) NOT NULL,
+  PRIMARY KEY (`usr_id`)
+) 
+
+CREATE TABLE `usr_sng_rating` (
+  `sng_id` int NOT NULL,
+  `usr_id` int NOT NULL,
+  `rating` int NOT NULL,
+  PRIMARY KEY (`sng_id`,`usr_id`)
+) 
+
+CREATE DATABASE `userdb` 
