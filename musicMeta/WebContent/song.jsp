@@ -41,9 +41,13 @@
 <%-- <link href="${contextPath}/resource/bootstrap.min.css" rel="stylesheet"> --%>
 
 
+
 <script>
 
-
+function ack(){
+	alert("New song added!");
+	
+}
 
 
 $(document).ready(function(){
@@ -130,7 +134,7 @@ $(document).ready(function(){
 				 
 				success : function(data) {
 					//alert(response);
-					 alert("Success");
+					 alert("New Artist Added!");
 						},
 				error : function(data) {
                  alert("faliure");
@@ -156,11 +160,21 @@ $(document).ready(function(){
 </script>
 </head>
 <body>
+<header>
+<nav class="navbar navbar-expand-md navbar-dark"
+			style="background-color: grey">
+			
+				<a href="https://www.xadmin.net" class="navbar-brand"> Song Application </a>
+	
+			
+		</nav>
+		</header>
+		<br>
  <div class="container">
-  <h2>Adding a new song:</h2>
+  <h3>Add a new song:</h3>
   <div class="card">
    <div class="card-body">
-    <form action="<%=request.getContextPath()%>/saveSong" method="post" enctype = "multipart/form-data">
+    <form action="<%=request.getContextPath()%>/saveSong" method="post" enctype = "multipart/form-data" onSubmit="return ack();">
  <input type="hidden" name="usr_id" value=<%=request.getAttribute("usr_id")%> />
  
  <input type="hidden" name="artst_id" > 
@@ -184,9 +198,9 @@ $(document).ready(function(){
             <input id="reservationDate" 
                    type="text"
                    placeholder="Choose a date" 
-                   class="form-control py-4 px-4" name="sng_dor" required/>
+                   class="form-control " name="sng_dor" required/>
             <div class="input-group-append"> 
-              <span class="input-group-text px-4">
+              <span class="input-group-text px-4">	
                   <i class="fa fa-clock-o"></i>
                 </span> 
             </div>
@@ -221,9 +235,11 @@ $(document).ready(function(){
 
 <button  disabled class="btn btn-primary"><i class="fa fa-plus"></i><span  id="MybtnModal">Add Artist</span></button>
 </div>
+     <div class="row">
      
-      <button type="submit" class="btn btn-primary">Cancel</button>
-     <button type="submit" class="btn btn-primary">Save</button>
+      <div class="col-5"></div>
+      <button type="submit" class="btn btn-primary ">Cancel</button>&nbsp;
+     <button type="submit" class="btn btn-primary" >Save </button></div>
     </form>
    </div>
   </div>
@@ -235,7 +251,7 @@ $(document).ready(function(){
               <div class="modal-content">
                 <div class="modal-header">
                  
-                  <h4 class="modal-title">Artist Name</h4>
+                  <h3 class="modal-title">Add an artist</h3>
                 </div>
               <div class="card">
    <div class="card-body">
@@ -249,7 +265,7 @@ $(document).ready(function(){
       </div>
      </div>
      <div class=" form-group row">
-       <label for="dob" class="col-sm-3 col-form-label">Date Of Release</label>
+       <label for="dob" class="col-sm-3 col-form-label">Date Of Birth</label>
       <div class="col-sm-7">
        
        <div class="datepicker date 
@@ -257,12 +273,13 @@ $(document).ready(function(){
             <input  
                    type="text"
                    placeholder="Choose a date" 
-                   class="form-control py-4 px-4" id="dob"  />
+                   class="form-control " id="dob"  />
             <div class="input-group-append"> 
-              <span class="input-group-text px-4">
+              <span class="input-group-text ">
                   <i class="fa fa-clock-o"></i>
                 </span> 
             </div>
+      </div>
       </div>
       </div>
       <div class="form-group row">
@@ -277,15 +294,17 @@ $(document).ready(function(){
                     
                     
                 </div>
-                </div>
-                </div>
-                <div class="modal-footer  mr-auto">
-                 <button id="save"  class="btn btn-primary" type="button" name="save-details">Save</button>
+                 <div class=" row ">
+                 <div class="col-5"></div>
+                 <button id="save"  class="btn btn-primary" type="button" name="save-details">Save</button>&nbsp;
   
-                    <button type="button" data-dismiss="modal" class="btn btn-primary">Close</button>
+                    <button type="button" data-dismiss="modal" class="btn btn-primary">Close</button></div><br>
+                </div>
+                </div>
+               
                 </div>
               </div>
             </div>
-        </div>
+       
 </body>
 </html>
