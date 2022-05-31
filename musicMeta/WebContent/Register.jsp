@@ -11,8 +11,18 @@
 	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
 	crossorigin="anonymous">
 </head>
-<body>
 
+<body>
+<header>
+<nav class="navbar navbar-expand-md navbar-dark"
+			style="background-color: grey">
+			
+				<a href="https://www.xadmin.net" class="navbar-brand"> Song Application </a>
+	
+			
+		</nav>
+		</header>
+		<br><br>
  <div class="container">
   <h2>Registration Page:</h2>
   <div class="card">
