@@ -12,10 +12,19 @@
 	crossorigin="anonymous">
 </head>
 <body>
-
+<header>
+<nav class="navbar navbar-expand-md navbar-dark"
+			style="background-color: grey">
+			
+				<a href="https://www.xadmin.net" class="navbar-brand"> Song Application </a>
+	
+			
+		</nav>
+		</header>
+		<br><br>
  <div class="container">
-  <h2>Login Page:</h2>
-  <div class="card">
+  <h3>Login</h3>
+  <div class="card" >
    <div class="card-body">
 <form action="authenticate">
  <c:if test="${failed !=null}">
